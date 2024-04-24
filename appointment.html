@@ -9,7 +9,7 @@
 <body>
     
     <div class="container">
-        <form action="" method="post">
+        <form action="appointments.php" method="post">
             <h2>Book An Appointment</h2>
             <div class="content">
                 <div class="input-box">
@@ -21,38 +21,30 @@
                     <input type="text" placeholder="Enter the username" name="uname" required>
                 </div>
                 <div class="input-box">
-                    <label for="Email">email</label>
-                    <input type="text" placeholder="Enter the email" name="Email" required>
+                    <label for="Email">Date</label>
+                    <input type="Date" placeholder="" name="date" required>
                 </div>
                 <div class="input-box">
                     <label for="password"> password</label>
                     <input type="text" placeholder="Enter your hometown" name="password" required>
                 </div>
                 <div class="input-box">
-                    <label for="blood type">Full name</label>
+                    <label for="blood type">Blood type</label>
                     <input type="text" placeholder="Enter the blood type" name="btype" required>
                 </div>
                 <div class="input-box">
                     <label for="age">age</label>
                     <input type="text" placeholder="Enter the age" name="age" required>
                 </div>
-                <span class="gender-title">Gender</span>
-                <div class="gender-category">
-                    <input type="radio" name="gender" id="male">
-                    <label for="gender">Male</label>
-                    <input type="radio" name="gender" id="female">
-                    <label for="gender">Female</label>
-                    <input type="radio" name="gender" id="other">
-                    <label for="gender">other</label>
-                </div>
+
             </div>
             <div class="alert">
-                <p>By clicking you have to accept <a herf= "#">terms</a> and <a href="#">conditions</a> </p>
+                <p>By clicking you have to accept <a herf= "#">terms</a> and <a href="terms.html">conditions</a> </p>
             </div>
             <div class="button-container">
-                <button type="submit">Register</button>
+                <button type="submit" name="reg">Register</button>
             </div>
         </form>
     </div>
-</body>
+  </body>
 </html>
