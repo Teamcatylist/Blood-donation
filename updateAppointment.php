@@ -15,7 +15,7 @@
 	$name="";
 	$uname="";
 	$date="";
-    $password="";
+    $pnum="";
     $btype="";
     $age="";
 	
@@ -31,7 +31,7 @@
 			$name=$row['Name'];
 			$uname=$row['Username'];
 			$date=$row['Date'];
-            $password=$row['userPassword'];
+            $pnum=$row['userPhonenumber'];
             $btype=$row['Bloodtype'];
             $age=$row['Age'];
 			
@@ -59,8 +59,8 @@
                     <input type="Date" placeholder="" name="date" required value="<?php echo $date;?>" >
                 </div>
                 <div class="input-box">
-                    <label for="password"> password</label>
-                    <input type="text" placeholder="Enter your hometown" name="password" required value="<?php echo $password;?>" >
+                    <label for="password">phone number</label>
+                    <input type="text" placeholder="Enter your phone number" name="pnum" required value="<?php echo $pnum;?>" >
                 </div>
                 <div class="input-box">
                     <label for="blood type">Blood type</label>

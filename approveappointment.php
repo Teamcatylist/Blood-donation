@@ -13,12 +13,12 @@
 	$name=isset($_POST['name'])? $_POST['name']:"";
 	$uname=isset($_POST['uname'])? $_POST['uname']:"";
 	$dt=isset($_POST['date']) ? $_POST['date']:"";
-    $pwd=isset($_POST['password']) ? $_POST['password']:"";
+    $pnum=isset($_POST['pnum']) ? $_POST['pnum']:"";
     $bt=isset($_POST['btype']) ? $_POST['btype']:"";
     $ag=isset($_POST['age']) ? $_POST['age']:"";
 	
 
-	$sql="UPDATE appointment SET Name='$name' , userName='$uname',  Date='$dt', userPassword='$pwd',Bloodtype='$bt',Age='$ag' WHERE userId='$rid' ";
+	$sql="UPDATE appointment SET Name='$name' , userName='$uname',  Date='$dt', userPhone='$pnum',Bloodtype='$bt',Age='$ag' WHERE userId='$rid' ";
 		
 	$result=mysqli_query($conn,$sql);
 

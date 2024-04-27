@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/appointment.css">
     <title>Catilyst Bank</title>
+    <script>
+       function validatePhoneNumber() {
+            var phoneNumber = document.getElementById("pnum").value;
+            var cleanedPhoneNumber = phoneNumber.replace(/\D/g, '');
+
+            if (cleanedPhoneNumber.length !== 10) {
+                alert("Please enter a 10-digit phone number.");
+                return false;
+            }
+
+            if (cleanedPhoneNumber.charAt(0) === '0' || cleanedPhoneNumber.charAt(0) === '1') {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
+
+            if (!/^\d+$/.test(cleanedPhoneNumber)) {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
+
+            alert("Phone number is valid.");
+            return true;
+        }
+    </script>
 </head>
 <body>
     
     <div class="container">
-        <form action="appointments.php" method="post">
+        <form action="appointments.php" method="post" onsubmit="return validatePhoneNumber()">
             <h2>Book An Appointment</h2>
             <div class="content">
                 <div class="input-box">
@@ -24,13 +48,23 @@
                     <label for="Email">Date</label>
                     <input type="Date" placeholder="" name="date" required>
                 </div>
-                <div class="input-box">
-                    <label for="password"> password</label>
-                    <input type="text" placeholder="Enter your hometown" name="password" required>
+                <div class="input-box" >
+                    <label for="phone Number"> phone Number</label>
+                    <input type="text" placeholder="Enter your Phone Number" id="pnum" name="pnum" required>
                 </div>
-                <div class="input-box">
-                    <label for="blood type">Blood type</label>
-                    <input type="text" placeholder="Enter the blood type" name="btype" required>
+                <div class="input-box" style="margin-bottom:15px">
+                    <label for="blood type" style="display: block; margin-bottom: 20px">Blood type</label>
+                    <select name="btype" id="blood-type" required style="width: 95%; padding: 10px; border: 1px solid #040303; border-radius: 5px; box-sizing: border-box; font-size: 14px;">
+                        <option value="" selected disabled>Select blood type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
                 </div>
                 <div class="input-box">
                     <label for="age">age</label>
@@ -39,7 +73,7 @@
 
             </div>
             <div class="alert">
-                <p>By clicking you have to accept <a herf= "#">terms</a> and <a href="terms.html">conditions</a> </p>
+                <p> you have to accept </a> and <a href="terms.html">terms and conditions</a> </p>
             </div>
             <div class="button-container">
                 <button type="submit" name="reg">Register</button>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  
 </head>
 <body>
 <div>
@@ -18,7 +18,7 @@
 		<td><b>First Name</b></td>
 		<td><b>User Name</b></td>
 		<td><b>Date</b></td>
-		<td><b>Userpassword</b></td>
+		<td><b>userPhonenumber</b></td>
         <td><b>Blood Type</b></td>
         <td><b>Age</b></td>
 	</tr>';
@@ -28,7 +28,7 @@
             '<td>' . $row['Name'] . '</td>' .
             '<td>' . $row['Username'] . '</td>' .
             '<td>' . $row['Date'] . '</td>' .
-            '<td>' . $row['userPassword'] . '</td>' .
+            '<td>' . $row['userPhonenumber'] . '</td>' .
             '<td>' . $row['Bloodtype'] . '</td>' .
             '<td>' . $row['Age'] . '</td>' .
             '<td>' .
