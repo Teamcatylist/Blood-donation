@@ -10,6 +10,41 @@
     </head>
 
     <body>
+
+
+    <?php
+      
+      include "connect.php";
+      $userid=$_GET['userId'];
+      $fname="";
+      $lname="";
+      $password="";
+      $confirm="";
+      $email="";
+
+    $sql="SELECT * FROM signup WHERE userId ='$userid'";
+	
+	$result=mysqli_query($conn,$sql);
+	
+	if(mysqli_num_rows($result)>0)
+	{
+		while($row=mysqli_fetch_assoc($result))
+		{
+			$userid=$row['userId'];
+			$fname=$row['firstname'];
+			$lname=$row['lastname'];
+			$password=$row['password'];
+            $confirm=$row['Confirm_password'];
+            $email=$row['Email'];
+           
+			
+		}
+	}
+  
+    
+    
+    
+    ?>
         <div class="signup-box">
             <h1>Sign up</h1>
             <h4>Donate Your Blood And Save a Life</h4>

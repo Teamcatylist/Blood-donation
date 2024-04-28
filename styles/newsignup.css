@@ -46,7 +46,7 @@ form input{
     border: 1px solid gray;
     outline: none;
 }
-input[type="button"]{
+.btn-btn-primary{
 
     width:300px;
     height: 35px;
