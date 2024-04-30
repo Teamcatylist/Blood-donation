@@ -6,7 +6,7 @@
 <body>
 <div>
     <?php
-	include"connect.php";
+	include "connect.php";
 	
 	$sql="SELECT * FROM signup";
 	$result=mysqli_query($conn,$sql);
@@ -17,27 +17,27 @@
 		<td><b>User ID</b></td>
 		<td><b>First Name</b></td>
 		<td><b>Last Name</b></td>
-		<td><b>password</b></td>
-		<td><b>confirm password</b></td>
+		<td><b>Password</b></td>
+		<td><b>Confirm Password</b></td>
         <td><b>Email</b></td>
         
 	</tr>';
 		while($row=mysqli_fetch_assoc($result))
 		{echo '<tr>' .
-            '<td>' . $row['userId'] . '</td>' .
+            '<td>' . $row['userid'] . '</td>' .
             '<td>' . $row['firstname'] . '</td>' .
             '<td>' . $row['lastname'] . '</td>' .
-            '<td>' . $row['password'] . '</td>' .
+            '<td>' . $row['Password'] . '</td>' .
             '<td>' . $row['Confirm_password'] . '</td>' .
             '<td>' . $row['Email'] . '</td>' .
             
             '<td>' .
-            '<button onclick="location.href=\'update.php?Id=' . $row['userId'] . '\'">Edit</button>' .
+            '<button class="btn-btn-primary" onclick="location.href=\'update.php?Id=' . $row['userid'] . '\'">Edit</button>' .
             '</td>' .
             '<td>' .
-            '<form action="deleteAppointment.php" method="post">' .
-            '<input type="hidden" name="delete_id" value="' . $row['userId'] . '">' .
-            '<button type="submit" name="delete_btn" formaction="deletappointment.php">Delete</button>' . 
+            '<form action="deleteUser.php" method="post">' .
+            '<input type="hidden" name="delete_id" value="' . $row['userid'] . '">' .
+            '<button type="submit" name="delete_btn">Delete</button>' . 
             '</form>' .
             '</td>' .
             '</tr>';

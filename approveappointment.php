@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-	include'connect.php';
+	include 'connect.php';
 	$rid=isset($_POST['id'])? $_POST['id']:"";
 	$name=isset($_POST['name'])? $_POST['name']:"";
 	$uname=isset($_POST['uname'])? $_POST['uname']:"";

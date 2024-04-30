@@ -5,35 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/appointment.css">
     <title>Catilyst Bank</title>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
     <script>
-    //    function validatePhoneNumber() {
-    //         var phoneNumber = document.getElementById("pnum").value;
-    //         var cleanedPhoneNumber = phoneNumber.replace(/\D/g, '');
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById("pnum").value;
+            var cleanedPhoneNumber = phoneNumber.replace(/\D/g, '');
 
-    //         if (cleanedPhoneNumber.length !== 10) {
-    //             alert("Please enter a 10-digit phone number.");
-    //             return false;
-    //         }
+            if (cleanedPhoneNumber.length !== 9) {
+                alert("Please enter a 10-digit phone number.");
+                return false;
+            }
 
-    //         if (cleanedPhoneNumber.charAt(0) === '0' || cleanedPhoneNumber.charAt(0) === '1') {
-    //             alert("Please enter a valid phone number.");
-    //             return false;
-    //         }
+            if (!/^\d+$/.test(cleanedPhoneNumber)) {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
 
-    //         if (!/^\d+$/.test(cleanedPhoneNumber)) {
-    //             alert("Please enter a valid phone number.");
-    //             return false;
-    //         }
+            alert("Phone number is valid.");
+            return true;
+        }
 
-    //         alert("Phone number is valid.");
-    //         return true;
-    //     }
+        function validateAge() {
+            var age = parseInt(document.getElementById("age").value);
+            var errorMessage = document.getElementById("age-error");
+
+            if (isNaN(age)) {
+                errorMessage.innerText = "Please enter a valid age.";
+                return false;
+            }
+
+            if (age < 20 || age > 50) {
+                errorMessage.innerText = "Age must be between 20 and 50.";
+                return false;
+            }
+
+           // errorMessage.innerText = ""; // Clear error message if age is valid
+           // alert("Age is valid.");
+            //return true;
+        }
     </script>
 </head>
 <body>
     
     <div class="container">
-        <form action="appointments.php" method="post" onsubmit="return validatePhoneNumber()">
+        <form action="appointments.php" method="post" onsubmit="return validatePhoneNumber() & validateAge()">
+
             <h2>Book An Appointment</h2>
             <div class="content">
                 <div class="input-box">
@@ -41,7 +63,7 @@
                     <input type="text" placeholder="Enter the name" name="name" required>
                 </div>
                 <div class="input-box">
-                    <label for="usrename">username</label>
+                    <label for="usrename">Username</label>
                     <input type="text" placeholder="Enter the username" name="uname" required>
                 </div>
                 <div class="input-box">
@@ -49,7 +71,7 @@
                     <input type="Date" placeholder="" name="date" required>
                 </div>
                 <div class="input-box" >
-                    <label for="phone Number"> phone Number</label>
+                    <label for="phone Number">Phone Number</label>
                     <input type="text" placeholder="Enter your Phone Number" id="pnum" name="pnum" required>
                 </div>
                 <div class="input-box" style="margin-bottom:15px">
@@ -66,19 +88,20 @@
                         <option value="O-">O-</option>
                     </select>
                 </div>
-                <div class="input-box">
-                    <label for="age">age</label>
-                    <input type="text" placeholder="Enter the age" name="age" required>
+                <div class="input-box" style="padding: 10px; width: 50%;">
+                    <label for="age">Age</label>
+                    <input type="text" placeholder="Enter the age" id="age" name="age" required>
+                    <div class="error-message" id="age-error"></div>
                 </div>
 
             </div>
             <div class="alert">
-                <p> you have to accept </a> and <a href="terms.html">terms and conditions</a> </p>
+                <p>You have to accept <a href="terms.html">terms and conditions</a></p>
             </div>
             <div class="button-container">
-                <button type="submit" name="reg">Register</button>
+                <button type="submit" name="reg" onclick="return validatePhoneNumber() && validateAge()">Register</button>
             </div>
         </form>
     </div>
-  </body>
+</body>
 </html>
