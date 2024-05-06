@@ -10,7 +10,7 @@
     
 <?php
 
-	include'connect.php';
+	include 'connect.php';
 	$id= $_GET['Id'];
 	$name="";
 	$uname="";
@@ -44,7 +44,7 @@
             <div class="content">
             <div class="input-box">
                     <label for="name">UserID</label>
-                    <input type="text" placeholder="Enter the name" name="id" required value="<?php echo $id;?> "  readonly="readonly">
+                    <input type="text" placeholder="Enter the name" name="Id" required value="<?php echo $id;?> "  readonly="readonly">
                 </div>
                 <div class="input-box">
                     <label for="name">Full name</label>

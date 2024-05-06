@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
 	$lastname= isset($_POST['lastname']) ? $_POST['lastname']:"";
 	$password= isset($_POST['password'])? $_POST['password']:"";
 	$confirmpassword= isset($_POST['confirmpassword']) ? $_POST['confirmpassword']:"0";
-	$email= isset($_POST['emai'])? $_POST['emai']:"";
+	$email= isset($_POST['email'])? $_POST['email']:"";
 	
 	
 	$sql= "INSERT INTO signup ( firstname,lastname,Password,Confirm_password,Email) VALUES ('$Firstname','$lastname','$password'

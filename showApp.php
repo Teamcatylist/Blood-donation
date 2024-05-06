@@ -76,7 +76,7 @@
                         '<td>' .
                             '<form action="deleteAppointment.php" method="post">' .
                                 '<input type="hidden" name="delete_id" value="' . $row['userId'] . '">' .
-                                '<button type="submit" name="delete_btn" formaction="deleteAppointment.php" class="crud-btn">Delete</button>' . 
+                                '<button type="submit" name="delete_btn" formaction="deletAppointment.php" class="crud-btn">Delete</button>' . 
                             '</form>' .
                         '</td>' .
                     '</tr>';
